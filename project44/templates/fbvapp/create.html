@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<style type="text/css">
+	label{
+		color: black;
+	}
+	form{
+		margin-left: 250px;
+		margin-right: 250px;
+		padding: 50px;
+	}
+	
+</style>
+{% extends "fbvapp/base.html" %}
+
+{% block body_block %}<center>
+	<body style="background-color: #99ffb3;"><br>
+	<h1>Employee Insertion Form</h1>
+	<form method="POST" style="background-color:#e6fff2;">
+		<table border="2">
+			{{ form.as_p }}
+		</table>
+		{% csrf_token %}
+		<input type="submit" name="" value="Insert Record">
+		
+	</form></center>
+	</body>
+{% endblock body_block %}

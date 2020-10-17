@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<style type="text/css">
+	label{
+		color: black;
+	}
+	form{
+		margin-left: 250px;
+		margin-right: 250px;
+		padding: 50px;
+	}
+	
+</style>
+{% extends "fbvapp/base.html" %}
+
+{% block body_block %}
+<body style="background-color: #99ffb3;"><br>
+	<h1>Employee Updation Form</h1>
+
+	<form method="POST"style="background-color:#e6fff2;">
+
+		{% csrf_token %}
+
+		Employee Number: <input type="text" name="eno" value="{{ employee.eno }}"><br>
+		Employee Name: <input type="text" name="ename" value="{{ employee.ename }}"><br>
+		Employee Salary: <input type="text" name="esalary" value="{{ employee.esalary }}"><br>
+		Employee Address: <input type="text" name="eaddress" value="{{ employee.eaddress }}"><br>
+		<input type="submit" name="" value="Update Record">
+			
+	</form>
+	</body>
+{% endblock body_block %}

@@ -1,0 +1,34 @@
+
+{% extends "fbvapp/base.html" %}
+{% block body_block %}
+<body style="background-color: #99ffb3;"><br>
+	<h1>Employee Information</h1>
+	<table border="5" align="center" class="tab" style="margin:25px;padding:25px;background-color:#e6fff2;">
+		<tr >
+			<th style="margin:25px;padding:25px;">Employee Number</th>
+			<th style="margin:25px;padding:25px;">Employee Name</th>
+			<th style="margin:25px;padding:25px;">Employee Salary</th>
+			<th style="margin:25px;padding:25px;">Employee Address</th>
+			<th style="margin:25px;padding:25px;"><center>Actions</center></th>
+		</tr>
+		{% for e in emp %}
+			<tr>
+				<td style="margin:25px;padding:25px;">{{ e.eno }}</td>
+				<td style="margin:25px;padding:25px;">{{ e.ename }}</td>
+				<td style="margin:25px;padding:25px;">{{ e.esalary }}</td>
+				<td style="margin:25px;padding:25px;">{{ e.eaddress }}</td>
+				<td style="margin:25px;padding:25px;">
+
+					<a href="/update/{{ e.id }}" class="btn btn-success btn-lg">Update</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				    <a href="/delete/{{ e.id }}" class="btn btn-danger btn-lg">Delete</a>
+
+				</td>
+			</tr>
+			
+		{% endfor %}
+		
+	</table><br>
+</body>
+
+	<a href="/create/" class="btn btn-primary btn-lg">Insert New Employee</a><br>
+{% endblock body_block %}
